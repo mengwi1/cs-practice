@@ -3,7 +3,7 @@ n = int(input('Введите количество записей: '))
 entries_received = 0
 error = 0
 exceeding_limit = 0
-maxt = 0
+maxt = -10**18
 average = 0.0
 for i in range(n):
     x = input()
@@ -19,8 +19,7 @@ for i in range(n):
     if x <= threshold:
         entries_received += 1
         average += x
-    if abs(x) > abs(maxt):
-        maxt = x
+    maxt = max(maxt, x)
 print(f'{entries_received}')
 print(f'{error}')
 print(f'{exceeding_limit}')
