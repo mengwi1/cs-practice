@@ -21,3 +21,8 @@ for i in range(n):
     if x <= threshold:
         entries_received += 1
         average += x
+print(f'{entries_received}')
+print(f'{error}')
+print(f'{exceeding_limit}')
+print(f'{maxt:.1f}')
+print(f'{average/(entries_received - error):.1f}')
