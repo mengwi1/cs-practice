@@ -5,7 +5,6 @@ error = 0
 exceeding_limit = 0
 maxt = 0
 average = 0.0
-print(f'Введите {n} показаний:')
 for i in range(n):
     x = input()
     if x == 'error':
@@ -16,11 +15,12 @@ for i in range(n):
     if x > threshold:
         entries_received += 1
         average += x
-        maxt = max(maxt, x)
         exceeding_limit += 1
     if x <= threshold:
         entries_received += 1
         average += x
+    if abs(x) > abs(maxt):
+        maxt = x
 print(f'{entries_received}')
 print(f'{error}')
 print(f'{exceeding_limit}')
