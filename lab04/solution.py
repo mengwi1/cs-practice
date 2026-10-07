@@ -14,3 +14,19 @@ def average(scores: list[float]) -> float:
     avg = sum(scores) / len(scores)
     return round(avg, 2)
 
+def ranking(names: list[str], scores: list[float]) -> list[str]:
+    pairs = list(zip(scores, names))
+    pairs.sort(reverse=True)
+    result = []
+    for score, name in pairs:
+        result.append(name)
+    return result
+
+def above_average(names: list[str], scores: list[float]) -> list[str]:
+    avg = average(scores)
+    result = []
+    for i in range(len(scores)):
+        if scores[i] > avg:
+            result.append(names[i])
+    return result
+
