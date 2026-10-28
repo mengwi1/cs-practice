@@ -5,3 +5,10 @@ def reshape_rows(values, width):
         return []
     array = np.asarray(values, dtype = float).reshape(-1, width)
     return array.tolist()
+
+def block(matrix, rows, columns):
+    if not matrix:
+        return []
+    array = np.asarray(matrix, dtype = float)
+    result = array[np.ix_(rows, columns)]
+    return result.tolist()
