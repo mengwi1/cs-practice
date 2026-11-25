@@ -28,3 +28,10 @@ def transpose_matrix(matrix):
 def solve_system(matrix, vector):
     x = np.linalg.solve(np.array(matrix, dtype=float), np.array(vector, dtype=float))
     return np.round(x, 6).tolist()
+
+def tensor_channel_mean(tensor):
+    return np.array(tensor).mean(axis=-1).tolist()
+
+def point_distance(first, second):
+    d = np.linalg.norm(np.array(first, dtype=float) - np.array(second, dtype=float))
+    return round(float(d), 6)
